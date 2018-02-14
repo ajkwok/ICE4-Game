@@ -1,0 +1,27 @@
+public abstract class Game
+{
+   private int level;
+   private String dungeon;
+   
+   public abstract int failRate();
+   
+   public int getLevel()
+   {
+      return level;
+   }
+   
+   public void setLevel(int lvl)
+   {
+      level = lvl;
+   }
+   
+   public void setCompletedDungeon(String dungeon)
+   {
+      this.dungeon = dungeon;
+   }
+   
+   public String getCompletedDungeon()
+   {
+      return dungeon
+   }
+}
