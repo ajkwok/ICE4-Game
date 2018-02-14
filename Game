@@ -3,7 +3,7 @@ public abstract class Game
    private int level;
    private String dungeon;
    
-   public abstract int failRate();
+   public abstract boolean failRate();
    
    public int getLevel()
    {
