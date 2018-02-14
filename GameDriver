@@ -4,20 +4,21 @@ public class GameDriver
    {
       System.out.println("Game Start.")
       boolean gameOver = false;
-      Game game = new Missions();
+      Missions game = new Missions();
       int level = game.getLevel();
-      int dungeon = game.getDungeon();
+      int dungeon = game.getCompletedDungeon();
       while (!gameOver)
       {
-         if (level == 5)
+         if (level > 5)
          {
             game.setLevel(++dungeon);
+            level = 1;
          }
          game.setDifficulty(dungeon);
          gameOver = game.failRate();
          if (!gameOver)
          {
-            game.levelCompleted(dungeon, level)
+            game.levelComplete(dungeon, level)
             game.setLevel(++level);
          }
          else if (gameOver)
