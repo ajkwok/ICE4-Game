@@ -1,0 +1,29 @@
+public class GameDriver
+{
+   public static void main(String[] args)
+   {
+      System.out.println("Game Start.")
+      boolean gameOver = false;
+      Game game = new Missions();
+      int level = game.getLevel();
+      int dungeon = game.getDungeon();
+      while (!gameOver)
+      {
+         if (level == 5)
+         {
+            game.setLevel(++dungeon);
+         }
+         game.setDifficulty(dungeon);
+         gameOver = game.failRate();
+         if (!gameOver)
+         {
+            game.levelCompleted(dungeon, level)
+            game.setLevel(++level);
+         }
+         else if (gameOver)
+         {
+            game.levelFailed(dungeon, level);
+         }
+      }
+   }
+}
