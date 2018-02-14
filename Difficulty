@@ -1,0 +1,20 @@
+import java.util.Random;
+
+public class Difficulty
+{
+   private Random rand = new Random();
+   private int passFail;
+   
+   public boolean failRate(int failureRate)
+   {
+      passFail = rand.nextInt(100) + 1;
+      if (passFail <= failureRate)
+      {
+         return false;
+      }
+      else if (passFail > failureRate)
+      {
+         return true;
+      }
+   }
+}
