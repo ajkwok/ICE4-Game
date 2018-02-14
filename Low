@@ -1,0 +1,23 @@
+import java.util.Random;
+
+public class Low
+{
+   private Random rand = new Random();
+   private int passFail;
+   private boolean success;
+   
+   public boolean failRate()
+   {
+      passFail = rand.nextInt(100) + 1;
+      if (passFail <= 10)
+      {
+         success = false;
+         return success;
+      }
+      else if (passFail > 10)
+      {
+         success = true;
+         return success;
+      }
+   }
+}
