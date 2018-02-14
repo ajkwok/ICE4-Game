@@ -1,20 +1,48 @@
 import java.util.Random;
 
-public class Difficulty
+public class Missions extends Game implements Status
 {
    private Random rand = new Random();
    private int passFail;
+   private int failureRate;
    
-   public boolean failRate(int failureRate)
+   public void setDifficulty(int dungeon)
+   {
+      if (dungeon == 1)
+      {
+         failureRate = 10;
+      }
+      else if (dungeon == 2)
+      {
+         failureRate = 25;
+      }
+      else if (dungeon == 3)
+      {
+         failureRate = 50;
+      }
+   }
+   
+   public boolean failRate()
    {
       passFail = rand.nextInt(100) + 1;
       if (passFail <= failureRate)
       {
-         return false;
+         return true;
       }
       else if (passFail > failureRate)
       {
-         return true;
+         return false;
       }
    }
+   
+   public void levelComplete(int dungeon, int level)
+   {
+      System.out.println("Current level: " + dungeon + " - " + level);
+   }
+	
+	public void levelFailed(int dungeon, int level)
+	{
+      System.out.println("Current level : " + dungeon + " - " + level + "\nLevel Failed. Game Over."
+                         + "\nCompleted Levels: " + ((dungeon - 1) * 5 + level - 1));
+	}
 }
