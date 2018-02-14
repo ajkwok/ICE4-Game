@@ -22,6 +22,6 @@ public abstract class Game
    
    public String getCompletedDungeon()
    {
-      return dungeon
+      return dungeon;
    }
 }
