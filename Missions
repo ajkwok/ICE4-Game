@@ -29,7 +29,7 @@ public class Missions extends Game implements Status
       {
          return true;
       }
-      else if (passFail > failureRate)
+      else
       {
          return false;
       }
@@ -37,12 +37,12 @@ public class Missions extends Game implements Status
    
    public void levelComplete(int dungeon, int level)
    {
-      System.out.println("Current level: " + dungeon + " - " + level);
+      System.out.println("Current level: " + dungeon + " - " + level + "Completed!");
    }
 	
 	public void levelFailed(int dungeon, int level)
 	{
-      System.out.println("Current level : " + dungeon + " - " + level + "\nLevel Failed. Game Over."
+      System.out.println("Current level : " + dungeon + " - " + level + "Level Failed.\nGame Over."
                          + "\nCompleted Levels: " + ((dungeon - 1) * 5 + level - 1));
 	}
 }
